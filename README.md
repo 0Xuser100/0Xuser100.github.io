@@ -6,7 +6,7 @@
 
 A responsive, bilingual English/Arabic portfolio with individually designed dark/light themes, a kinetic AI network illustration, an interactive project explorer, project case studies, career experience, project filters, and a downloadable CV.
 
-Theme and motion preferences are saved locally. Decorative animations respect device reduced-motion settings and can also be paused using the header control. The project explorer supports mouse, touch, and arrow-key navigation. Its architecture previews illustrate each project's workflow; they are not live product outputs.
+The theme preference is saved locally. Decorative animations run automatically and respect device reduced-motion settings. The project explorer supports mouse, touch, and arrow-key navigation. Its architecture previews illustrate each project's workflow; they are not live product outputs.
 
 The chat is a browser-local CV guide with prepared answers. It does not call an LLM or require API keys. Google Fonts is used for typography, with local system font fallbacks.
 
@@ -21,7 +21,7 @@ Edit the website files in `dist/`, commit, and push to `main`. GitHub Actions va
 | `dist/style.css` | Base theme and layout |
 | `dist/refinements.css` | Portfolio presentation and responsive styling |
 | `dist/motion.css` | Dark/light palettes, animated network, project explorer, and motion accessibility |
-| `dist/motion.js` | Saved motion preference, reveal effects, and reading progress |
+| `dist/motion.js` | Automatic animations, reveal effects, and reading progress |
 | `dist/Mahmoud_Abdulhamid.pdf` | Downloadable CV |
 | `.github/workflows/pages.yml` | Validation and automatic Pages deployment |
 | `scripts/check-site.py` | Local asset, link, translation, and metadata checks |
