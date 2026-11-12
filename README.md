@@ -40,7 +40,7 @@ python scripts/check-site.py
 ## Deployment pipeline
 
 ```text
-Push to main → syntax / asset / link checks → Pages artifact → deploy
+Push to main → syntax / asset / link checks → Pages artifact → deploy → verify live file hashes
 Pull request → checks only
 ```
 
@@ -49,6 +49,8 @@ Track deployment under [Actions](https://github.com/0Xuser100/0Xuser100.github.i
 Repository **Settings → Pages → Source** must stay set to **GitHub Actions**. The workflow uses GitHub's built-in token and OIDC; no personal access token or custom deployment secret is needed.
 
 The GitHub repository is the source for this deployment. Changes made only to the original Sites-hosted copy are separate and must also be committed here to appear on GitHub Pages.
+
+GitHub Pages is the primary hosting for this portfolio. The post-deployment check compares the live homepage, JavaScript, styles, favicon, and CV with the repository. It catches a README/Jekyll page replacing the portfolio even when a deployment reports success.
 
 ---
 

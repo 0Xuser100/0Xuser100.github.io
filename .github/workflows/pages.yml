@@ -43,14 +43,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
+      contents: read
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Check out deployment verification
+        uses: actions/checkout@v6
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Deploy verified website
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify the published portfolio matches the repository
+        env:
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: python3 scripts/verify-live.py
