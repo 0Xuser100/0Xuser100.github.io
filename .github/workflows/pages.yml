@@ -27,7 +27,9 @@ jobs:
         with:
           node-version: '24'
       - name: Check JavaScript syntax
-        run: node --check dist/app.js
+        run: |
+          node --check dist/app.js
+          node --check dist/motion.js
       - name: Check assets, links, and bilingual content
         run: python3 scripts/check-site.py
       - name: Upload website artifact
